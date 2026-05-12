@@ -17,19 +17,21 @@
   --white: #fff;
 }
 
-body {
+body {   /*5 Column Desktop Layout */
   height: 100vh;
   column-gap: 1rem;
   display: grid;
-  grid-auto-rows: 300px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows:minmax(250px, auto);
   background-color: #a4b2dc;
-  grid-template-areas:  /*5 Column Desktop Layout */
-  "bg-header bg-header bg-header bg-header bg-header"
-  "header header header header header"
-  "champ-select team-grid team-grid team-grid item-select"
-  "champ-select team-grid team-grid team-grid item-select"
-  "footer footer footer footer footer"
-  "bg-footer bg-footer bg-footer bg-footer bg-footer";
+  grid-template-areas:
+  "bg-header bg-header bg-header bg-header"
+  "header header header header"
+  "champ-header team-header team-header item-header"
+  "champ-select team-grid team-grid item-select"
+  "champ-select team-grid team-grid item-select"
+  "footer footer footer footer"
+  "bg-footer bg-footer bg-footer bg-footer";
 }
 
 img {
@@ -42,19 +44,21 @@ img {
 .mask{
   -webkit-mask-image: linear-gradient(to bottom right, black, transparent);
   mask-image: linear-gradient(to bottom right, black, transparent);
+  mask-size: 3500px;
 }
 
 #bg-header {
   display: grid;
   grid-area: bg-header;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  grid-auto-rows: minmax(300px, auto);
+  grid-auto-rows: minmax(250px, auto);
 }
 
 header {
   grid-area: header;
-  text-align: center;
   font-weight: bold;
+  align-content: center;
+  text-align: center;
 }
 
 #champ-select {
@@ -64,6 +68,23 @@ header {
   background-color: #be84c3;
   margin: 20px;
   padding: 10px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+#team-traits {
+  grid-area: team-grid;
+  border: 10px solid #9568e6;
+  border-radius: 7px;
+  background-color: #be84c3;
+  height: 38%;
+  width: 39%;
+  margin: 20px;
+  padding: 10px;
+  opacity: 0.5;
+  align-content: center;
+  text-align: center;
 }
 
 #team-grid {
@@ -80,12 +101,13 @@ header {
   border: 10px solid #9568e6;
   border-radius: 7px;
   background-color: #be84c3;
-    margin: 20px;
+  margin: 20px;
   padding: 10px;
 }
 
 footer {
   grid-area: footer;
+  align-content: center;
   text-align: center;
 }
 
@@ -93,9 +115,51 @@ footer {
   display: grid;
   grid-area: bg-footer;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  grid-auto-rows: minmax(300px, auto);
+  grid-auto-rows: minmax(250px, auto);
+}
+ .drag-box1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
+ .drag-box2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
 
+.drop-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
 
+h1, h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
 
+#champ-header{
+  display: grid;
+  grid-area: champ-header;
+  grid-template-rows: min-content;
+  align-content:end;
+  text-align: center;
+}
+
+#team-header{
+  display: grid;
+  grid-area: team-header;
+  grid-template-rows: min-content;
+  align-content:end;
+  text-align: center;
+}
+
+#item-header {
+  display: grid;
+  grid-area: item-header;
+  grid-template-rows: min-content;
+  align-content:end;
+  text-align: center;
+}

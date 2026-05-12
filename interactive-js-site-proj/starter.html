@@ -8,23 +8,30 @@
 </head>
 <body>
 	<div id="bg-header" class="mask">
-		<img src="images/bg-header.jpg" alt="TFT Set 17 Promotional Artwork">
+		<img src="bg-images/bg-header.jpg" alt="TFT Set 17 Promotional Artwork">
 	</div>
 
 	<header><h1>Set 17: Team Planner</h1></header>
 	
-	<div id="champ-select" class="drag-box"> </div>  <!--Drag Container for Champ Icons-->
+	<!--Drag Container for Champ Icons-->
+	<div id="champ-header"> <h4>(Drag champions from here into the team grid to start your team.)</h4> </div>
+	<div id="champ-select" class="drag-box1"></div> 
 
-	<div id="team-traits"></div>
+	<!--Drop Container for Champ and Item Icons-->
+	<div id="team-header"> <h2>Team Grid</h2> </div>
+	<section id="team-grid" class="drop-box"></section>
 
-	<section id="team-grid" class="drop-box"></section> <!--Drop Container for Champ and Item Icons-->
+	<!--Appears later in HTML to maintain proper stacking order.-->
+	<div id="team-traits"><h3>(Team Traits Appear Here)</h3></div>
 
-	<div id="item-select" class="drag-box"></div> <!--Drag Container for Item Icons-->
+	<!--Drag Container for Item Icons-->
+	<div id="item-header"><h4>(Drag items from here into the team grid to itemize your team.)</h4></div>
+	<div id="item-select" class="drag-box2"></div>
 
-	<footer> <h2>Check Out Our Augment Tier List -></h2> </footer>
+	<footer> <h2>Check Out Our Item Crafting Guide -></h2> </footer>
 
 	<div id="bg-footer" class="mask">
-		<img src="images/bg-footer.jpg" alt="TFT Set 17 Promotional Artwork">
+		<img src="bg-images/bg-footer.jpg" alt="TFT Set 17 Promotional Artwork">
 	</div>
 
 
